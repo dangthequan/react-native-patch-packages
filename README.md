@@ -1,4 +1,5 @@
 # Patches For Some React Native Packages Using patch-package
+Apply patches will resolve some issues for some react-native packages.
 
 # I. Installation
 
