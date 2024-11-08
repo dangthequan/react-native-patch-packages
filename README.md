@@ -15,7 +15,11 @@ yarn add --dev patch-package postinstall-postinstall
 # II. Usage
 
 ### 1. Download patches
-Our patches are located in /packages folder. Just download what patch you need and move it to your patches folder.
+Our patches are located in /patches folder. Just download what patch you need and move it to your patches folder.
+
+```bash
+<your-project-folder-location>/patches <-- Copy patches in /patches folder to location.
+```
 
 ### 2. Patch a package using patch-package
 Run this command to apply a patch
@@ -68,4 +72,21 @@ Error:
 Patch:
 ```bash
 /packages/react-native-snap-carousel+3.9.1.patch
+```
+
+### 3. react-native-i18n
+
+Package:
+```bash
+react-native-i18n
+```
+
+Error:
+```bash
+A problem occurred evaluating project ':react-native-i18n'. > Could not find method compile() for arguments [com.facebook.react:react-native:+] on object of type org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler
+```
+
+Patch:
+```bash
+/patches/react-native-i18n+2.0.15.patch
 ```
