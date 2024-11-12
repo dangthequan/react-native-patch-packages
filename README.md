@@ -91,3 +91,20 @@ Patch:
 ```bash
 /patches/react-native-i18n+2.0.15.patch
 ```
+
+### 4. react-native-is-device-locked
+Package:
+```bash
+react-native-is-device-locked
+```
+
+Error:
+```bash
+Could not find method compile() for arguments [com.facebook.react:react-native:0.20.+] on object of type org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler.
+```
+
+Patch:
+```bash
+/patches/react-native-is-device-locked+2.0.5.patch
+```
+

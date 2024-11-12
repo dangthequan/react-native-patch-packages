@@ -1,0 +1,77 @@
+diff --git a/node_modules/react-native-is-device-locked/android/app/build.gradle b/node_modules/react-native-is-device-locked/android/app/build.gradle
+index 7e9c5a1..d0862b9 100644
+--- a/node_modules/react-native-is-device-locked/android/app/build.gradle
++++ b/node_modules/react-native-is-device-locked/android/app/build.gradle
+@@ -2,16 +2,16 @@
+ apply plugin: 'com.android.library'
+ 
+ android {
+-    compileSdkVersion 23
+-    buildToolsVersion "23.0.1"
++    compileSdkVersion 35
++    buildToolsVersion "35.0.0"
+ 
+     defaultConfig {
+-        minSdkVersion 16
+-        targetSdkVersion 22
++        minSdkVersion 24
++        targetSdkVersion 34
+         versionCode 1
+         versionName "1.0"
+         ndk {
+-            abiFilters "armeabi-v7a", "x86"
++            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+         }
+     }
+     lintOptions {
+@@ -20,6 +20,6 @@ android {
+ }
+ 
+ dependencies {
+-    compile 'com.facebook.react:react-native:0.20.+'
++    implementation 'com.facebook.react:react-native:+'
+ }
+   
+\ No newline at end of file
+diff --git a/node_modules/react-native-is-device-locked/android/app/src/main/java/my/fin/RNIsDeviceRootedPackage.java b/node_modules/react-native-is-device-locked/android/app/src/main/java/my/fin/RNIsDeviceRootedPackage.java
+index 299cd26..f9165a7 100644
+--- a/node_modules/react-native-is-device-locked/android/app/src/main/java/my/fin/RNIsDeviceRootedPackage.java
++++ b/node_modules/react-native-is-device-locked/android/app/src/main/java/my/fin/RNIsDeviceRootedPackage.java
+@@ -1,6 +1,8 @@
+ 
+ package my.fin;
+ 
++import androidx.annotation.NonNull;
++
+ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.List;
+@@ -11,18 +13,20 @@ import com.facebook.react.bridge.ReactApplicationContext;
+ import com.facebook.react.uimanager.ViewManager;
+ import com.facebook.react.bridge.JavaScriptModule;
+ public class RNIsDeviceRootedPackage implements ReactPackage {
++    @NonNull
+     @Override
+-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+-      return Arrays.<NativeModule>asList(new RNIsDeviceRootedModule(reactContext));
++    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
++      return List.<NativeModule>of(new RNIsDeviceRootedModule(reactContext));
+     }
+ 
+-    @Override
+-    public List<Class<? extends JavaScriptModule>> createJSModules() {
+-      return Collections.emptyList();
+-    }
++//    @Override
++//    public List<Class<? extends JavaScriptModule>> createJSModules() {
++//      return Collections.emptyList();
++//    }
+ 
++    @NonNull
+     @Override
+-    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
++    public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactContext) {
+       return Collections.emptyList();
+     }
+ }
+\ No newline at end of file
