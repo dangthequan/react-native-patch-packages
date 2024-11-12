@@ -1,0 +1,16 @@
+diff --git a/node_modules/realm/binding/android/build.gradle b/node_modules/realm/binding/android/build.gradle
+index f26be70..ac47474 100644
+--- a/node_modules/realm/binding/android/build.gradle
++++ b/node_modules/realm/binding/android/build.gradle
+@@ -103,6 +103,7 @@ android {
+                 "**/libjsi.so",
+                 "**/libreactnativejni.so",
+                 "**/libturbomodulejsijni.so",
++                "**/libreactnative.so"
+         ]
+     }
+ }
+diff --git a/node_modules/realm/binding/android/src/main/jniLibs/x86_64/librealm.so b/node_modules/realm/binding/android/src/main/jniLibs/x86_64/librealm.so
+new file mode 100755
+index 0000000..ccebad8
+Binary files /dev/null and b/node_modules/realm/binding/android/src/main/jniLibs/x86_64/librealm.so differ

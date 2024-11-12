@@ -117,3 +117,17 @@ Patch:
 /patches/react-native-is-device-locked+2.0.5.patch
 ```
 
+### 5. realm
+Issue:
+```bash
+2 files found with path 'lib/x86_64/libreactnative.so' from inputs:
+ - path_to_project_folder/node_modules/realm/binding/android/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/x86_64/libreactnative.so
+ - /Users/user_name/.gradle/caches/transforms-4/8e09500c4caa2a8ab40cf3908d4da65d/transformed/jetified-react-android-0.76.1-debug/jni/x86_64/libreactnative.so
+If you are using jniLibs and CMake IMPORTED targets, see
+https://developer.android.com/r/tools/jniLibs-vs-imported-targets
+```
+
+Patch:
+```bash
+/patches/realm+12.13.2.patch
+```
